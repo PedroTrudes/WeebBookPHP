@@ -1,3 +1,19 @@
+<?php 
+require('./dados.php');
+$idByParams = $_REQUEST['id'];
+
+$filterBook = array_filter($livros, function($l) use($idByParams){
+    return $l['id'] == $idByParams;
+});
+
+$book = array_pop($filterBook);
+var_dump($filterBook);
+
+echo "<pre>";
+var_dump($_REQUEST);
+echo "</pre>";
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -19,10 +35,12 @@
             </ul>
         </nav>
     </header>
-
-
     <main class="mx-auto max-w-screen-lg">
         <h1>Pagina de Livro</h1>
+        <span><?= $idByParams ?></span>
+        <span>
+            <?= $book['titulo'] ?>
+        </span>
     </main>
 </body>
 </html>
