@@ -24,7 +24,7 @@
 
 
     <main class="mx-auto max-w-screen-lg">
-        <?php require "views/{$view}.php"; ?>
+        <?php require "views/{$view}.view.php"; ?>
     </main>
 </body>
 
